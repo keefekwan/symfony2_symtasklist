@@ -1,0 +1,7 @@
+parameters:
+#    sym_task.example.class: Sym\TaskBundle\Example
+
+services:
+#    sym_task.example:
+#        class: %sym_task.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

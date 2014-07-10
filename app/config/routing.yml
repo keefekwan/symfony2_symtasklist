@@ -1,0 +1,5 @@
+sym_task:
+    resource: "@SymTaskBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

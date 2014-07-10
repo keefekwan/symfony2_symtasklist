@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="task-header">
+        <h1>SymTask list</h1>
+    </div>
+
+    <ul>
+        <li class="task-create">
+
+            <form action="{{ path('task_create') }}" method="post">
+                <input type="hidden" name="_method" value="POST">
+                {{ form_errors(form) }}
+                {{ form_row(form.task) }}
+                <div class="hidden">{{ form_widget(form.complete) }}</div> {# Hides the complete checkbox on when creating new task #}
+                {{ form_rest(form) }}
+            </form>
+        </li>
+    </ul>
+
+    <table class="records_list">
+
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td id="task-complete-{{ entity.id }}">
+                    <a class="ajax-task-complete" href="{{ path('task_edit_complete', { 'id': entity.id }) }}">{% if entity.complete %} X {% else %} O {% endif %} </a>
+                </td>
+                <td>{{ entity.task }}</td>
+
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('task_show', { 'id': entity.id }) }}">Details</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('task_edit', { 'id': entity.id }) }}">Edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {% endblock %}
