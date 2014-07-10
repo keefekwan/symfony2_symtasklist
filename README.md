@@ -1,3 +1,12 @@
+SymTask List
+========================
+Super simple to-do task list for practice and the neverending joyous journey of creating web apps while learning new things. 
+
+Highlights:
+- html5 boilerplate
+- ajax interactive ticks for completed tasks
+
+
 Symfony Standard Edition
 ========================
 
